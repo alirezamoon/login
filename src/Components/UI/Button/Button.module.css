@@ -1,0 +1,48 @@
+.Button {
+  background-color: transparent;
+  border: 3px solid #aaa;
+  border-radius: 6px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+/* .Button:first-of-type {
+  margin-left: 0;
+  padding-left: 0;
+} */
+
+.Button:hover {
+    opacity: .7;
+}
+
+.Button:active {
+  position: relative;
+  top: 2px;
+}
+/* .Button:focus {
+  outline: none;
+}
+.Button:hover {
+  background-color: #a82ffc;
+} */
+
+
+.success {
+  color: #4caf50;
+  border-color: #4caf50;
+}
+
+.danger {
+  color: #f44336;
+  border-color: #f44336;
+}
+
+.warning {
+  color: orange;
+  border-color: orange;
+}

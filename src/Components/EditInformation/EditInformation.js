@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import InfoContext from '../../Context/InfoContext'
 
+import Button from './../UI/Button/Button'
 
 const ChangeInfo = () => {
 
@@ -16,7 +17,7 @@ const ChangeInfo = () => {
                 type='text'
                 value={infoContext.password}
                 onChange={(e) => infoContext.changePassword(e.target.value)} />
-            <button onClick={infoContext.editInfoHandler}>Edit</button>
+            <Button clicked={infoContext.editInfoHandler} btnType='success'>Edit</Button>
         </div>
     )
 }

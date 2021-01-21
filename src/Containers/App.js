@@ -4,6 +4,8 @@ import Login from './../Components/Login/Login'
 import Logout from './../Components/Logout/Logout'
 import EditInformation from '../Components/EditInformation/EditInformation'
 
+import Button from './../Components/UI/Button/Button'
+
 import classes from './App.module.css'
 
 import AuthContext from './../Context/AuthContext'
@@ -57,7 +59,7 @@ class App extends Component {
                             : this.state.isEditInfo
                                 ? <EditInformation />
                                 : <div>
-                                    <button onClick={this.editInfoHandler}>Edit information</button>
+                                    <Button clicked={this.editInfoHandler} btnType='warning'>Edit information</Button>
                                     <Logout />
                                 </div>}
                     </div>

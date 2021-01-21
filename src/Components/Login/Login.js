@@ -5,6 +5,7 @@ import './Login.css'
 // Components
 import Username from './Username/Username'
 import Password from './Password/Password'
+import Button from './../UI/Button/Button'
 
 // Context
 // import AuthContext from './../../Context/AuthContext'
@@ -52,7 +53,7 @@ class Login extends Component {
                 <div className='Login'>
                     <Username />
                     <Password />
-                    <button onClick={this.loginHandler}>Login</button>
+                    <Button clicked={this.loginHandler} btnType='success'>Login</Button>
                     <p>{this.state.mistake}</p>
                 </div>
             </InputContext.Provider>

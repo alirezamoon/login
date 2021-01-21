@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import AuthContext from './../../Context/AuthContext'
 
+import Button from './../UI/Button/Button'
 
 const Logout = () => {
 
@@ -8,7 +9,7 @@ const Logout = () => {
 
     return(
         <div>
-            <button onClick={authContext.toggleAuth}>Logout</button>
+            <Button clicked={authContext.toggleAuth} btnType='danger'>Logout</Button>
         </div>
     )
 }

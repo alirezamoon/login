@@ -1,6 +1,6 @@
 .Login {
     width: 500px;
-    background-color: red;
+    border: 5px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
