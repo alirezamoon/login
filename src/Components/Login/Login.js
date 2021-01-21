@@ -8,7 +8,7 @@ import Password from './Password/Password'
 
 // Context
 // import AuthContext from './../../Context/AuthContext'
-import InformationContext from './../../Context/InformationContext'
+import InputContext from '../../Context/InputContext'
 
 
 class Login extends Component {
@@ -23,7 +23,7 @@ class Login extends Component {
     // static authContext = AuthContext
 
     loginHandler = () => {
-        if (this.state.username === 'alireza' && this.state.password === '1234') {
+        if (this.state.username === this.props.username && this.state.password === this.props.password) {
             this.props.toggleAuth()
         } else {
             this.setState({ mistake: "something went wrong" })
@@ -43,7 +43,7 @@ class Login extends Component {
 
     render() {
         return (
-            <InformationContext.Provider value={{
+            <InputContext.Provider value={{
                 username: this.state.username,
                 password: this.state.password,
                 changePassword: this.changePassword,
@@ -55,7 +55,7 @@ class Login extends Component {
                     <button onClick={this.loginHandler}>Login</button>
                     <p>{this.state.mistake}</p>
                 </div>
-            </InformationContext.Provider>
+            </InputContext.Provider>
         )
     }
 

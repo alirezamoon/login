@@ -3,7 +3,7 @@ import classes from './Password.module.css'
 
 
 import AuthContext from './../../../Context/AuthContext'
-import InformationContext from './../../../Context/InformationContext'
+import InputContext from './../../../Context/InputContext'
 
 
 
@@ -13,10 +13,10 @@ const Password = () => {
     
     
     const authcontext = useContext(AuthContext)
-    const informationContext = useContext(InformationContext)
+    const inputContext = useContext(InputContext)
     
     const changeText = (e) => { 
-        informationContext.changePassword(e.target.value)
+        inputContext.changePassword(e.target.value)
     }
     
     return (

@@ -2,18 +2,18 @@ import React ,{useState , useContext } from 'react'
 import classes from './Username.module.css'
 
 import AuthContext from './../../../Context/AuthContext'
-import InformationContext from './../../../Context/InformationContext'
+import InputContext from '../../../Context/InputContext'
 
 
 const Username = () => {
 
 
     const authcontext = useContext(AuthContext)
-    const informationContext = useContext(InformationContext)
+    const inputContext = useContext(InputContext)
 
 
     const changeText = (e) => {
-        informationContext.changeUsername(e.target.value)
+        inputContext.changeUsername(e.target.value)
     }
 
     return (

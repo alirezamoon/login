@@ -1,10 +1,10 @@
 import React from 'react'
 
-const informationContext = React.createContext({
+const inputContext = React.createContext({
     username : '',
     password: '',
     changeUsername: () => {},
     changePassword: () => {},
 })
 
-export default informationContext
+export default inputContext
