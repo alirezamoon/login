@@ -6,6 +6,10 @@ import './Login.css'
 import Username from './Username/Username'
 import Password from './Password/Password'
 
+// Context
+import AuthContext from './../../Context/AuthContext'
+import InformationContext from './../../Context/InformationContext'
+
 
 class Login extends Component {
 
@@ -17,32 +21,44 @@ class Login extends Component {
     }
 
     loginHandler = () => {
-        if(this.state.username === 'alireza' && this.state.password === 1234) {
-            this.setState({authenticated: true})
+        if (this.state.username === 'alireza' && this.state.password === 1234) {
+            this.setState({ authenticated: true })
         } else {
-            this.setState({mistake: "something went wrong"})
+            this.setState({ mistake: "something went wrong" })
         }
     }
 
-    changeUsername = (e) => {
+    changeUsername = (text) => {
         this.setState({
-            username: e.target.value
+            username: text
         })
     }
-    changePassword = (e) => {
+    changePassword = (text) => {
         this.setState({
-            password: e.target.value
+            password: text
         })
     }
 
     render() {
         return (
-            <div className='Login'>
-                <Username />
-                <Password />
-                <button onClick={this.loginHandler}>Login</button>
-                <p>{this.state.mistake}</p>
-            </div>
+            <AuthContext.Provider value={{
+                authenticated: this.state.authenticated,
+                login: this.loginHandler
+            }}>
+                <InformationContext.Provider value={{
+                    username: this.state.username,
+                    password: this.state.password,
+                    changePassword: this.changePassword,
+                    changeUsername: this.changeUsername
+                }}>
+                    <div className='Login'>
+                        <Username />
+                        <Password />
+                        <button onClick={this.loginHandler}>Login</button>
+                        <p>{this.state.mistake}</p>
+                    </div>
+                </InformationContext.Provider>
+            </AuthContext.Provider>
         )
     }
 

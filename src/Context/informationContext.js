@@ -1,7 +1,7 @@
 import React from 'react'
 
 const informationContext = React.createContext({
-    usename : '',
+    username : '',
     password: null,
     changeUsername: () => {},
     changePassword: () => {},
