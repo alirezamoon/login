@@ -1,14 +1,28 @@
 import React, { Component } from 'react'
+
 import Login from './../Components/Login/Login'
+import Logout from './../Components/Logout/Logout'
+
+
 import classes from './App.module.css'
 
-// import AuthContext from './../Context/AuthContext'
+import AuthContext from './../Context/AuthContext'
 
 
 class App extends Component {
 
     state = {
-        authenticated: false
+        authenticated: false,
+        users: [
+            {
+                username: 'Alireza',
+                password: '1234'
+            },
+            {
+                username: 'Hossein',
+                password: '5678'
+            },
+        ]
     }
 
     toggleAuth = () => {
@@ -17,16 +31,16 @@ class App extends Component {
 
     render() {
         return (
-            // <AuthContext.Provider value={{
-            //     authenticated: this.state.authenticated,
-            //     toggleAuth: this.toggleAuth
-            // }}>
+            <AuthContext.Provider value={{
+                authenticated: this.state.authenticated,
+                toggleAuth: this.toggleAuth
+            }}>
                 <div className={classes.App}>
                     {!this.state.authenticated
                         ? <Login auth={this.state.authenticated} toggleAuth={this.toggleAuth} />
-                        : null}
+                        : <Logout />}
                 </div>
-            // </AuthContext.Provider>
+            </AuthContext.Provider>
         )
     }
 }
