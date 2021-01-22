@@ -27,7 +27,7 @@ class Login extends Component {
         if (this.state.usernameInput === this.props.username && this.state.passwordInput === this.props.password) {
             this.props.toggleAuth()
         } else {
-            this.setState({ mistake: "something went wrong" })
+            this.setState({ mistake: "username or password was incorrect !" })
         }
     }
 
@@ -54,7 +54,7 @@ class Login extends Component {
                     <Username />
                     <Password />
                     <Button clicked={this.loginHandler} btnType='success'>Login</Button>
-                    <p>{this.state.mistake}</p>
+                    <p className='mistake'>{this.state.mistake}</p>
                 </div>
             </InputContext.Provider>
         )

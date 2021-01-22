@@ -3,4 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+}
+
+.mistake {
+    position: absolute;
+    bottom: 160px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: crimson;
 }

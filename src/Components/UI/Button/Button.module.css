@@ -6,7 +6,7 @@
   outline: none;
   cursor: pointer;
   padding: 10px 20px;
-  margin: 10px;
+  margin-top: 10px;
   font-weight: bold;
   width: 300px;
   box-sizing: border-box;
@@ -14,43 +14,40 @@
   font-size: 18px;
 }
 
-/* .Button:first-of-type {
-  margin-left: 0;
-  padding-left: 0;
-} */
-
-/* .Button:hover {
-    opacity: .7;
-} */
-
 .Button:active {
   position: relative;
   top: 2px;
 }
-/* .Button:focus {
-  outline: none;
-} */
-/* .Button:hover {
-  background-color: #a82ffc;
-}  */
 
 .success {
   color: #4caf50;
 }
-.success:hover, .success:focus {
+.success:hover,
+.success:focus {
   border-color: #4caf50;
 }
 
 .danger {
   color: #f44336;
 }
-.danger:hover , .danger:focus{
+.danger:hover,
+.danger:focus {
   border-color: #f44336;
 }
 
 .warning {
   color: orange;
 }
-.warning:hover , .warning:focus{
+.warning:hover,
+.warning:focus {
   border-color: orange;
+}
+
+@media only screen and (max-width: 499px) {
+  .Button {
+    padding: 5px 20px;
+    width: 250px;
+    height: 40px;
+    font-size: 14px;
+  }
 }
