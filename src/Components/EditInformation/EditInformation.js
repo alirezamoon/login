@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
 import InfoContext from '../../Context/InfoContext'
 
+import classes from './EditInformation.module.css'
+
 import Button from './../UI/Button/Button'
 
-const ChangeInfo = () => {
+const EditInformation = () => {
 
     const infoContext = useContext(InfoContext)
 
     return (
-        <div>
+        <div className={classes.EditInformation}>
             <input
                 type='text'
                 value={infoContext.username}
@@ -22,4 +24,4 @@ const ChangeInfo = () => {
     )
 }
 
-export default ChangeInfo
+export default EditInformation

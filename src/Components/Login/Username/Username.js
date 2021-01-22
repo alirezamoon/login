@@ -13,13 +13,15 @@ const Username = () => {
 
 
     const changeText = (e) => {
-        inputContext.changeUsername(e.target.value)
+        inputContext.changeUsernameInput(e.target.value)
     }
 
     return (
         <div className={classes.Username}>
-            <p>Username : </p>
-            <input type='text' onChange={(e) => changeText(e)} />
+            <input 
+            type='text' 
+            onChange={(e) => changeText(e)}
+            placeholder='username' />
         </div>
     )
 }

@@ -15,8 +15,8 @@ import InputContext from '../../Context/InputContext'
 class Login extends Component {
 
     state = {
-        username: '',
-        password: '',
+        usernameInput: '',
+        passwordInput: '',
         mistake: ''
     }
 
@@ -24,31 +24,31 @@ class Login extends Component {
     // static authContext = AuthContext
 
     loginHandler = () => {
-        if (this.state.username === this.props.username && this.state.password === this.props.password) {
+        if (this.state.usernameInput === this.props.username && this.state.passwordInput === this.props.password) {
             this.props.toggleAuth()
         } else {
             this.setState({ mistake: "something went wrong" })
         }
     }
 
-    changeUsername = (text) => {
+    changeUsernameInput = (text) => {
         this.setState({
-            username: text
+            usernameInput: text
         })
     }
-    changePassword = (text) => {
+    changePasswordInput = (text) => {
         this.setState({
-            password: text
+            passwordInput: text
         })
     }
 
     render() {
         return (
             <InputContext.Provider value={{
-                username: this.state.username,
-                password: this.state.password,
-                changePassword: this.changePassword,
-                changeUsername: this.changeUsername
+                usernameInput: this.state.usernameInput,
+                passwordInput: this.state.passwordInput,
+                changePasswordInput: this.changePasswordInput,
+                changeUsernameInput: this.changeUsernameInput
             }}>
                 <div className='Login'>
                     <Username />

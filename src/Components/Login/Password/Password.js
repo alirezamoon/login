@@ -16,13 +16,15 @@ const Password = () => {
     const inputContext = useContext(InputContext)
     
     const changeText = (e) => { 
-        inputContext.changePassword(e.target.value)
+        inputContext.changePasswordInput(e.target.value)
     }
     
     return (
         <div className={classes.Password}>
-            <p>Password : </p>
-            <input type='password' onChange={(e) => changeText(e)} />
+            <input 
+            type='password' 
+            onChange={(e) => changeText(e)}
+            placeholder='password' />
         </div>
     )
 }

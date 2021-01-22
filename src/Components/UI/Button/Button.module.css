@@ -1,14 +1,17 @@
 .Button {
-  background-color: transparent;
-  border: 3px solid #aaa;
-  border-radius: 6px;
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
   color: white;
   outline: none;
   cursor: pointer;
-  font: inherit;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 10px;
   font-weight: bold;
+  width: 300px;
+  box-sizing: border-box;
+  height: 55px;
+  font-size: 18px;
 }
 
 /* .Button:first-of-type {
@@ -16,9 +19,9 @@
   padding-left: 0;
 } */
 
-.Button:hover {
+/* .Button:hover {
     opacity: .7;
-}
+} */
 
 .Button:active {
   position: relative;
@@ -34,15 +37,21 @@
 
 .success {
   color: #4caf50;
+}
+.success:hover {
   border-color: #4caf50;
 }
 
 .danger {
   color: #f44336;
+}
+.danger:hover {
   border-color: #f44336;
 }
 
 .warning {
   color: orange;
+}
+.warning:hover {
   border-color: orange;
 }
