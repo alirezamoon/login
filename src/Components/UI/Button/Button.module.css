@@ -29,29 +29,28 @@
 }
 /* .Button:focus {
   outline: none;
-}
-.Button:hover {
-  background-color: #a82ffc;
 } */
-
+/* .Button:hover {
+  background-color: #a82ffc;
+}  */
 
 .success {
   color: #4caf50;
 }
-.success:hover {
+.success:hover, .success:focus {
   border-color: #4caf50;
 }
 
 .danger {
   color: #f44336;
 }
-.danger:hover {
+.danger:hover , .danger:focus{
   border-color: #f44336;
 }
 
 .warning {
   color: orange;
 }
-.warning:hover {
+.warning:hover , .warning:focus{
   border-color: orange;
 }
