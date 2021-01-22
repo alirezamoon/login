@@ -1,4 +1,4 @@
-import React ,{useState , useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import classes from './Username.module.css'
 
 import AuthContext from './../../../Context/AuthContext'
@@ -18,10 +18,11 @@ const Username = () => {
 
     return (
         <div className={classes.Username}>
-            <input 
-            type='text' 
-            onChange={(e) => changeText(e)}
-            placeholder='username' />
+            {inputContext.usernameInput !== '' ? <span>username</span> : null}
+            <input
+                type='text'
+                onChange={(e) => changeText(e)}
+                placeholder='username' />
         </div>
     )
 }

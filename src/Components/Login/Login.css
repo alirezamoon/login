@@ -13,3 +13,11 @@
     font-family: sans-serif;
     color: crimson;
 }
+
+
+@media only screen and (max-width: 499px) {
+    .mistake{
+        bottom: 80px;
+        font-size: 12px;
+    }
+}

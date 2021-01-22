@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import classes from './Password.module.css'
 
 
@@ -10,21 +10,22 @@ import InputContext from './../../../Context/InputContext'
 
 
 const Password = () => {
-    
-    
+
+
     const authcontext = useContext(AuthContext)
     const inputContext = useContext(InputContext)
-    
-    const changeText = (e) => { 
+
+    const changeText = (e) => {
         inputContext.changePasswordInput(e.target.value)
     }
-    
+
     return (
         <div className={classes.Password}>
-            <input 
-            type='password' 
-            onChange={(e) => changeText(e)}
-            placeholder='password' />
+            {inputContext.passwordInput !== '' ? <span>password</span> : null}
+            <input
+                type='password'
+                onChange={(e) => changeText(e)}
+                placeholder='password' />
         </div>
     )
 }
