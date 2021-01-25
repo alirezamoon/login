@@ -10,8 +10,8 @@ const EditInformation = () => {
     const infoContext = useContext(InfoContext)
 
     const [message, setMessage] = useState('')
-    const [username, setUsername] = useState(infoContext.username)
-    const [password, setPassword] = useState(infoContext.password)
+    const [username, setUsername] = useState(infoContext.users[0].username)
+    const [password, setPassword] = useState(infoContext.users[0].password)
 
     const changeUsername = (e) => {
         setUsername(e.target.value)
@@ -34,11 +34,11 @@ const EditInformation = () => {
         <div className={classes.EditInformation}>
             <input
                 type='text'
-                value={infoContext.username}
+                value={infoContext.users[0].username}
                 onChange={(e) => changeUsername(e)} />
             <input
                 type='text'
-                value={infoContext.password}
+                value={infoContext.users[0].password}
                 onChange={(e) => changePassword(e)} />
             <Button clicked={clicked} btnType='success'>Edit</Button>
             <p className={classes.invalidInput}>{message}</p>

@@ -15,13 +15,24 @@ class App extends Component {
 
     state = {
         authenticated: false,
-        username: 'Alireza',
-        password: '1234',
-        isEditInfo: false
+        isEditInfo: false,
+        users: [
+            {
+                id:1,
+                username: 'Alireza',
+                password: '1234',
+            },
+            {
+                id:2,
+                username: 'mamad',
+                password: '5678'
+            }
+        ]
     }
 
     toggleAuth = () => {
-        this.setState({ authenticated: !this.state.authenticated })
+        this.setState({ authenticated: !this.state.authenticated },
+            console.log(this.state.authenticated))
     }
 
     changeUsername = (text) => {
@@ -43,8 +54,7 @@ class App extends Component {
                 toggleAuth: this.toggleAuth
             }}>
                 <InfoContext.Provider value={{
-                    username: this.state.username,
-                    password: this.state.password,
+                    users: this.state.users,
                     changeUsername: this.changeUsername,
                     changePassword: this.changePassword,
                     editInfoHandler: this.editInfoHandler
@@ -54,8 +64,7 @@ class App extends Component {
                             ? <Login
                                 auth={this.state.authenticated}
                                 toggleAuth={this.toggleAuth}
-                                username={this.state.username}
-                                password={this.state.password} />
+                                users={this.state.users} />
                             : this.state.isEditInfo
                                 ? <EditInformation />
                                 : <div>

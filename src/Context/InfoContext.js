@@ -2,8 +2,7 @@ import React from 'react'
 
 
 const InfoContext = React.createContext({
-    username: '',
-    password: '',
+    users: [],
     changeUsername: () => {},
     changePassword: () => {},
     editInfoHandler: () => {},

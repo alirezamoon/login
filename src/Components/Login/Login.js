@@ -17,14 +17,37 @@ class Login extends Component {
     state = {
         usernameInput: '',
         passwordInput: '',
-        mistake: ''
+        mistake: '',
+        authenticatedss: false
     }
 
 
     // static authContext = AuthContext
+    comon = () => {
+        let auth = false
+        let auth2 = false
+        this.props.users.map(user => {
+            auth = user.username === this.state.usernameInput && user.password === this.state.passwordInput
+            // console.log(user)
+            // console.log(user.username)
+            // console.log(this.state.usernameInput)
+            // console.log(user.password)
+            // console.log(this.state.passwordInput)
+            // console.log(this)
+            if (auth) {
+                auth2 = true
+            }
+        })
+        // console.log(this.setState)
+        // this.setState({authenticatedss: auth2})
+        this.setState({ authenticatedss: true }, function () {
+            console.log(this.state.authenticatedss);
+          });
+        this.loginHandler()
+    }
 
     loginHandler = () => {
-        if (this.state.usernameInput === this.props.username && this.state.passwordInput === this.props.password) {
+        if (this.state.authenticatedss) {
             this.props.toggleAuth()
         } else {
             this.setState({ mistake: "username or password was incorrect !" })
@@ -53,7 +76,7 @@ class Login extends Component {
                 <div className='Login'>
                     <Username />
                     <Password />
-                    <Button clicked={this.loginHandler} btnType='success'>Login</Button>
+                    <Button clicked={this.comon} btnType='success'>Login</Button>
                     <p className='mistake'>{this.state.mistake}</p>
                 </div>
             </InputContext.Provider>
